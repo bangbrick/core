@@ -54,8 +54,8 @@ function hovtoclick(){
 							$('.dropdown-toggle').find('b.caret').removeClass('caret').addClass('caret-up');
 							$this.css("display", "block");
 							$this.css("z-index", "70");	
-							$this.css("background-color","#FFFFFF");		
-							$this.css("color", "#D12311");
+							$this.css("background-color","#D12311");		
+							$this.css("color", "#FFFFFF");
 							$(this).parent().siblings().find('a.dropdown-toggle').css({"background-color":"#f32813"});
 							$('.dropdown-menu').not(ddtoggle).slideUp(function(){
 								$(this).parent().find('b.caret-up').removeClass('caret-up').addClass('caret');
