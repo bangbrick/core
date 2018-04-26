@@ -1,3 +1,192 @@
+$(document).ready(function(e) {
+window.onload=function(){$('.xdiv').remove();$('#categclmn').css('display', 'none');};
+$('.recent-post-thumb').attr('src', function(i, src) {return src.replace( 's72-c', 's2048' );});
+$(window).scroll(function () {$(this).scrollTop() ? $(".gototop").fadeIn() : $(".gototop").fadeOut()}), $(".gototop").click(function () {$("html,body").animate({scrollTop: 0}, 500)})
+var src = $('.featimg').attr('src');
+$('img#itmmainImage').attr('src','' + src + '');
+var newerLink = $("a.blog-pager-newer-link").attr("href");
+$("a.blog-pager-newer-link").load(newerLink+" h1.mainpost", function() { 
+var chevroncl = "<i class='fa fa-chevron-cl-blgpgritm'></i>";
+var newerLinkTitle = $("a.blog-pager-newer-link").text();
+$("a.blog-pager-newer-link").text(newerLinkTitle).attr("title", newerLinkTitle).html(chevroncl + newerLinkTitle);
+}); 
+var olderLink = $("a.blog-pager-older-link").attr("href");
+$("a.blog-pager-older-link").load(olderLink+" h1.mainpost", function() { 
+var chevroncr = "<i class='fa fa-chevron-cr-blgpgritm'></i>";
+var olderLinkTitle = $("a.blog-pager-older-link").text(); 
+$("a.blog-pager-older-link").text(olderLinkTitle).attr("title", olderLinkTitle).html(olderLinkTitle + chevroncr);
+}); 
+function hovtoclick(){
+	var wi = $(window).width();
+	if (wi > 992){
+		$(".dropdown").each(function(index, element) {
+			$("ul.nav li.dropdown").on({
+				mouseenter: function () {
+					$(this).find('b').removeClass('caret').addClass('caret-up');
+					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideDown(200, function(){	
+						$(this).siblings().css("z-index", "70");
+						$(this).siblings().css("color", "#1AB898");
+						$(this).siblings().css("background", "#fefefe");
+					});	
+				},
+				mouseleave: function () {
+					$(this).find('b').removeClass('caret-up').addClass('caret');
+					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideUp(200, function(){	
+						$(this).siblings().css("z-index", "60");
+						$(this).siblings().css("color", "#fff");
+						$(this).siblings().css("background", "#1AB898");		
+					});	
+				}
+			});
+		});
+	}else{
+		$(".dropdown").each(function(index, element) {
+			$(".dropdown-menu").removeAttr("style");
+			$("ul.nav li.dropdown").unbind('mouseenter').unbind('mouseleave');
+			$(this).children(".dropdown-toggle").click(function(e) {
+				$this = $(this);
+				if($this.attr("data-toggle") == "dropdown")
+				{
+					if($(this).siblings(".dropdown-menu").css("display")!="block")
+					{
+						var ddtoggle = $(this).siblings('.dropdown-menu');
+						$this.siblings(".dropdown-menu").slideDown(200, function(){
+							$('.dropdown-toggle').find('b.caret').removeClass('caret').addClass('caret-up');
+							$this.css("display", "block");
+							$this.css("z-index", "70");	
+							$this.css("background-color","#fefefe");		
+							$this.css("color", "#1AB898");
+							$(this).parent().siblings().find('a.dropdown-toggle').css({"background-color":"#2C4552"});
+							$('.dropdown-menu').not(ddtoggle).slideUp(function(){
+								$(this).parent().find('b.caret-up').removeClass('caret-up').addClass('caret');
+								$('.dropdown-toggle').css("color", "#fff");
+							});
+						});
+					}
+					else
+					{
+						if ($(this).siblings('.dropdown-menu').parents('.open').length) 
+						{
+							$this.siblings(".dropdown-menu").slideUp(200, function(){
+								$('.dropdown-toggle').find('b.caret-up').removeClass('caret-up').addClass('caret');
+								$this.css("display", "block");
+								$this.css("z-index", "60");		
+								$this.css("background-color","#1AB898");				
+								$this.css("color", "#fff");		
+							});
+						}
+					}
+				}	
+			e.preventDefault();
+			});
+		});
+	}
+};
+hovtoclick();
+$(window).resize(function(){
+	hovtoclick();
+});
+$(window).trigger('resize');
+$('.navbar-toggle').click(function(){
+	$("i",this).toggleClass("fa-times_rspnsv");
+});
+});
+
+if (location.protocol != 'https:'){
+location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+}
+
+$(window).resize(function(e) {
+    var textSize 	= $(".srchqryerr").css("font-size");
+	var maxSize 	= 130;
+	var minSize		= 20;
+	var windowWidth = $(window).width();
+	
+	if(windowWidth < 935) {
+		textChange = ( windowWidth * maxSize ) / 1000 ;
+	}	
+	else {
+		textChange = maxSize;
+	}
+	
+	if(textChange < minSize)
+		textChange = minSize;
+
+	$(".srchqryerr").css("font-size", textChange);    
+	$(".srchqryerr").css("line-height", ""+(textChange*1)+"px");
+});
+/**************************************************************************************/
+/*! device.js 0.1.58 */
+(function(){var a,b,c,d,e,f,g,h,i,j;a=window.device,window.device={},c=window.document.documentElement,j=window.navigator.userAgent.toLowerCase(),device.ios=function(){return device.iphone()||device.ipod()||device.ipad()},device.iphone=function(){return d("iphone")},device.ipod=function(){return d("ipod")},device.ipad=function(){return d("ipad")},device.android=function(){return d("android")},device.androidPhone=function(){return device.android()&&d("mobile")},device.androidTablet=function(){return device.android()&&!d("mobile")},device.blackberry=function(){return d("blackberry")||d("bb10")||d("rim")},device.blackberryPhone=function(){return device.blackberry()&&!d("tablet")},device.blackberryTablet=function(){return device.blackberry()&&d("tablet")},device.windows=function(){return d("windows")},device.windowsPhone=function(){return device.windows()&&d("phone")},device.windowsTablet=function(){return device.windows()&&d("touch")},device.fxos=function(){return(d("(mobile;")||d("(tablet;"))&&d("; rv:")},device.fxosPhone=function(){return device.fxos()&&d("mobile")},device.fxosTablet=function(){return device.fxos()&&d("tablet")},device.meego=function(){return d("meego")},device.mobile=function(){return device.androidPhone()||device.iphone()||device.ipod()||device.windowsPhone()||device.blackberryPhone()||device.fxosPhone()||device.meego()},device.tablet=function(){return device.ipad()||device.androidTablet()||device.blackberryTablet()||device.windowsTablet()||device.fxosTablet()},device.portrait=function(){return 90!==Math.abs(window.orientation)},device.landscape=function(){return 90===Math.abs(window.orientation)},device.noConflict=function(){return window.device=a,this},d=function(a){return-1!==j.indexOf(a)},f=function(a){var b;return b=new RegExp(a,"i"),c.className.match(b)},b=function(a){return f(a)?void 0:c.className+=" "+a},h=function(a){return f(a)?c.className=c.className.replace(a,""):void 0},device.ios()?device.ipad()?b("ios ipad tablet"):device.iphone()?b("ios iphone mobile"):device.ipod()&&b("ios ipod mobile"):device.android()?device.androidTablet()?b("android tablet"):b("android mobile"):device.blackberry()?device.blackberryTablet()?b("blackberry tablet"):b("blackberry mobile"):device.windows()?device.windowsTablet()?b("windows tablet"):device.windowsPhone()?b("windows mobile"):b("desktop"):device.fxos()?device.fxosTablet()?b("fxos tablet"):b("fxos mobile"):device.meego()?b("meego mobile"):b("desktop"),e=function(){return device.landscape()?(h("portrait"),b("landscape")):(h("landscape"),b("portrait"))},i="onorientationchange"in window,g=i?"orientationchange":"resize",window.addEventListener?window.addEventListener(g,e,!1):window.attachEvent?window.attachEvent(g,e):window[g]=e,e()}).call(this);
+/**************************************************************************************/
+(function($){
+
+    /**
+* Copyright 2012, Digital Fusion
+* Licensed under the MIT license.
+* http://teamdf.com/jquery-plugins/license/
+*
+* @author Sam Sehnert
+* @desc A small plugin that checks whether elements are within
+* the user visible viewport of a web browser.
+* only accounts for vertical position, not horizontal.
+*/
+    var $w = $(window);
+    $.fn.visible = function(partial,hidden,direction){
+
+        if (this.length < 1)
+            return;
+
+        var $t = this.length > 1 ? this.eq(0) : this,
+            t = $t.get(0),
+            vpWidth = $w.width(),
+            vpHeight = $w.height(),
+            direction = (direction) ? direction : 'both',
+            clientSize = hidden === true ? t.offsetWidth * t.offsetHeight : true;
+
+        if (typeof t.getBoundingClientRect === 'function'){
+
+            // Use this native browser method, if available.
+            var rec = t.getBoundingClientRect(),
+                tViz = rec.top >= 0 && rec.top < vpHeight,
+                bViz = rec.bottom > 0 && rec.bottom <= vpHeight,
+                lViz = rec.left >= 0 && rec.left < vpWidth,
+                rViz = rec.right > 0 && rec.right <= vpWidth,
+                vVisible = partial ? tViz || bViz : tViz && bViz,
+                hVisible = partial ? lViz || lViz : lViz && rViz;
+
+            if(direction === 'both')
+                return clientSize && vVisible && hVisible;
+            else if(direction === 'vertical')
+                return clientSize && vVisible;
+            else if(direction === 'horizontal')
+                return clientSize && hVisible;
+        } else {
+
+            var viewTop = $w.scrollTop(),
+                viewBottom = viewTop + vpHeight,
+                viewLeft = $w.scrollLeft(),
+                viewRight = viewLeft + vpWidth,
+                offset = $t.offset(),
+                _top = offset.top,
+                _bottom = _top + $t.height(),
+                _left = offset.left,
+                _right = _left + $t.width(),
+                compareTop = partial === true ? _bottom : _top,
+                compareBottom = partial === true ? _top : _bottom,
+                compareLeft = partial === true ? _right : _left,
+                compareRight = partial === true ? _left : _right;
+
+            if(direction === 'both')
+                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop)) && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
+            else if(direction === 'vertical')
+                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+            else if(direction === 'horizontal')
+                return !!clientSize && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
+        }
+    };
+
+})(jQuery);
 /**************************************************************************************/
 /*!
   * Bootstrap v4.1.0 (https://getbootstrap.com/)
