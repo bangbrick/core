@@ -35,6 +35,7 @@ function hovtoclick(){
 					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideUp(200, function(){	
 						$(this).siblings().css("z-index", "60");
 						$(this).siblings().css("color", "#FFFFFF");
+						$(this).siblings().css("text-shadow", "0px -1px 1px #91180C");
 						$(this).siblings().css("background", "#D12311");		
 					});	
 				}
@@ -58,6 +59,7 @@ function hovtoclick(){
 							$this.css("z-index", "70");	
 							$this.css("background-color","#FFFFFF");		
 							$this.css("color", "#D12311");
+							$(this).siblings().css("text-shadow", "0px -1px 1px #FFFFFF");
 							$(this).parent().siblings().find('a.dropdown-toggle').css({"background-color":"#2C4552"});
 							$('.dropdown-menu').not(ddtoggle).slideUp(function(){
 								$(this).parent().find('b.caret-up').removeClass('caret-up').addClass('caret');
@@ -75,7 +77,8 @@ function hovtoclick(){
 								$this.css("display", "block");
 								$this.css("z-index", "60");		
 								$this.css("background-color","#D12311");				
-								$this.css("color", "#FFFFFF");		
+								$this.css("color", "#FFFFFF");	
+								$(this).siblings().css("text-shadow", "0px -1px 1px #91180C");
 							});
 						}
 					}
