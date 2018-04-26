@@ -20,7 +20,7 @@ function hovtoclick(){
 	var wi = $(window).width();
 	if (wi > 992){
 		$(".dropdown").each(function(index, element) {
-			$("ul.nav li.dropdown").on({
+			$("ul.navbar-nav li.dropdown").on({
 				mouseenter: function () {
 					$(this).find('b').removeClass('caret').addClass('caret-up');
 					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideDown(200, function(){	
@@ -42,7 +42,7 @@ function hovtoclick(){
 	}else{
 		$(".dropdown").each(function(index, element) {
 			$(".dropdown-menu").removeAttr("style");
-			$("ul.nav li.dropdown").unbind('mouseenter').unbind('mouseleave');
+			$("ul.navbar-nav li.dropdown").unbind('mouseenter').unbind('mouseleave');
 			$(this).children(".dropdown-toggle").click(function(e) {
 				$this = $(this);
 				if($this.attr("data-toggle") == "dropdown")
