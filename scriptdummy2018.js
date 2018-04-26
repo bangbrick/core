@@ -69,7 +69,7 @@ function hovtoclick(){
 						{
 							$this.siblings(".dropdown-menu").slideUp(200, function(){
 								$('.dropdown-toggle').find('b.caret-up').removeClass('caret-up').addClass('caret');
-								$this.css("display", "block");
+								$this.css("display", "none");
 								$this.css("z-index", "60");		
 								$this.css("background-color","#1AB898");				
 								$this.css("color", "#fff");		
