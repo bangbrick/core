@@ -18,7 +18,7 @@ $("a.blog-pager-older-link").text(olderLinkTitle).attr("title", olderLinkTitle).
 }); 
 	
 $(window).trigger('resize');
-$('.navbar-toggle').click(function(){
+$('.navbar-toggler').click(function(){
 	$("i",this).toggleClass("fa-times_rspnsv");
 });
 });
