@@ -26,6 +26,7 @@ function hovtoclick(){
 					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideDown(200, function(){	
 						$(this).siblings().css("z-index", "70");
 						$(this).siblings().css("color", "#D12311");
+						$(this).siblings().css("text-shadow", "#FFFFFF");
 						$(this).siblings().css("background", "#FFFFFF");
 					});	
 				},
