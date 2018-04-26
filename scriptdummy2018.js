@@ -22,7 +22,7 @@ function hovtoclick(){
 		$(".dropdown").each(function(index, element) {
 			$("ul.nav li.dropdown").on({
 				mouseenter: function () {
-					$(this).find('.dropdown-toggle::after').removeClass('.dropdown-toggle::after').addClass('caret-up');
+					$('.dropdown-toggle').find('b.caret').removeClass('caret').addClass('caret-up');
 					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideDown(200, function(){	
 						$(this).siblings().css("z-index", "70");
 						$(this).siblings().css("color", "#FFFFFF");
