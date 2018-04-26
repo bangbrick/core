@@ -52,7 +52,7 @@ function hovtoclick(){
 						var ddtoggle = $(this).siblings('.dropdown-menu');
 						$this.siblings(".dropdown-menu").slideDown(200, function(){
 							$('.dropdown-toggle').find('b.caret').removeClass('caret').addClass('caret-up');
-							$this.css("display", "block");
+							//$this.css("display", "block");
 							$this.css("z-index", "70");	
 							$this.css("background-color","#fefefe");		
 							$this.css("color", "#1AB898");
