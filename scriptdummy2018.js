@@ -16,7 +16,12 @@ var chevroncr = "<i class='fa fa-chevron-cr-blgpgritm'></i>";
 var olderLinkTitle = $("a.blog-pager-older-link").text(); 
 $("a.blog-pager-older-link").text(olderLinkTitle).attr("title", olderLinkTitle).html(olderLinkTitle + chevroncr);
 }); 
-
+	
+$(window).trigger('resize');
+$('.navbar-toggle').click(function(){
+	$("i",this).toggleClass("fa-times_rspnsv");
+});
+});
 if (location.protocol != 'https:'){
 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
 }
