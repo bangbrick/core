@@ -25,7 +25,7 @@ function hovtoclick(){
 					$('.dropdown-toggle').find('b.caret').removeClass('caret').addClass('caret-up');
 					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideDown(200, function(){	
 						$(this).siblings().css("z-index", "70");
-						$(this).siblings().css("color", "#f32813");
+						$(this).siblings().css("color", "#F72C17");
 						$(this).siblings().css("text-shadow", "0px -1px 1px #FFFFFF");
 						$(this).siblings().css("background", "#FFFFFF");
 					});	
@@ -58,7 +58,7 @@ function hovtoclick(){
 							$this.css("display", "block");
 							$this.css("z-index", "70");	
 							$this.css("background-color","#FFFFFF");		
-							$this.css("color", "#f32813");
+							$this.css("color", "#F72C17");
 							$(this).siblings().css("text-shadow", "0px -1px 1px #FFFFFF");
 							$(this).parent().siblings().find('a.dropdown-toggle').css({"background-color":"#2C4552"});
 							$('.dropdown-menu').not(ddtoggle).slideUp(function(){
