@@ -25,7 +25,7 @@ function hovtoclick(){
 					$('.dropdown-toggle').find('b.caret').removeClass('caret').addClass('caret-up');
 					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideDown(200, function(){	
 						$(this).siblings().css("z-index", "70");
-						$(this).siblings().css("color", "#D12311");
+						$(this).siblings().css("color", "#f32813");
 						$(this).siblings().css("text-shadow", "0px -1px 1px #FFFFFF");
 						$(this).siblings().css("background", "#FFFFFF");
 					});	
@@ -34,9 +34,9 @@ function hovtoclick(){
 					$(this).find('b').removeClass('caret-up').addClass('caret');
 					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideUp(200, function(){	
 						$(this).siblings().css("z-index", "60");
-						$(this).siblings().css("color", "#f32813");
+						$(this).siblings().css("color", "#D12311");
 						$(this).siblings().css("text-shadow", "0px -1px 1px #91180C");
-						$(this).siblings().css("background", "#D12311");		
+						$(this).siblings().css("background", "#FFFFFF");		
 					});	
 				}
 			});
