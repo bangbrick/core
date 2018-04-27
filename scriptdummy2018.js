@@ -34,7 +34,7 @@ function hovtoclick(){
 					$(this).find('b').removeClass('caret-up').addClass('caret');
 					$(this).find(".dropdown-menu").stop(true, true).delay(200).slideUp(200, function(){	
 						$(this).siblings().css("z-index", "60");
-						$(this).siblings().css("color", "#FFFFFF");
+						$(this).siblings().css("color", "#f32813");
 						$(this).siblings().css("text-shadow", "0px -1px 1px #91180C");
 						$(this).siblings().css("background", "#D12311");		
 					});	
